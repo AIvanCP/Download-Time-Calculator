@@ -103,6 +103,24 @@ function switchLanguage() {
   });
 }
 
-function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
+function applyDarkMode(isDarkMode) {
+  const darkModeSwitch = document.getElementById("darkModeSwitch");
+  if (isDarkMode) {
+    document.body.classList.add("dark-mode");
+    darkModeSwitch.checked = true;
+  } else {
+    document.body.classList.remove("dark-mode");
+    darkModeSwitch.checked = false;
+  }
 }
+
+function toggleDarkMode() {
+  const isDarkMode = document.body.classList.toggle("dark-mode");
+  localStorage.setItem("darkMode", isDarkMode);
+}
+
+// Apply dark mode on page load based on user preference
+document.addEventListener("DOMContentLoaded", () => {
+  const isDarkMode = JSON.parse(localStorage.getItem("darkMode"));
+  applyDarkMode(isDarkMode);
+});
