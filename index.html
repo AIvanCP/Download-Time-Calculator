@@ -16,6 +16,14 @@
 </head>
 
 <body>
+    <div class="top-right">
+        <label class="ui-switch">
+            <input type="checkbox" id="darkModeSwitch" onchange="toggleDarkMode()">
+            <div class="slider">
+                <div class="circle"></div>
+            </div>
+        </label>
+    </div>
     <div>
         <div class="container">
             <h2>Download Time Calculator</h2>
@@ -44,7 +52,7 @@
                     <select id="speedUnit">
                         <option value="Mbps">Mb/s</option>
                         <option value="MBps">MB/s</option>
-                        <option value="Gbps">Gb/s</option>
+                        <option value="Gbps">Gb/s<  /option>
                         <option value="Kbps">Kb/s</option>
                     </select>
                 </div>
@@ -62,7 +70,6 @@
             </a>
         </div>
     </div>
-
     <script src="scripts.js"></script>
 </body>
 
