@@ -8,6 +8,7 @@ Calculate the download time for a file based on your internet speed.
 - Supports multiple internet speed units (Mbps, MBps, Kbps, etc.)
 - Provides detailed time breakdown (years, days, hours, minutes, seconds)
 - Responsive design for mobile and desktop
+- Dark mode support
 
 ## Usage
 
@@ -23,6 +24,7 @@ Calculate the download time for a file based on your internet speed.
    ```
 2. Open `index.html` in your web browser.
 
+> **Note**
 > This site is also hosted on [here](https://calculator.kidixdev.my.id)
 
 ## License
