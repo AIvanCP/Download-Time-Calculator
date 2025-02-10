@@ -1,0 +1,8 @@
+{
+  "title": "Download Time Calculator",
+  "fileSizeLabel": "File Size",
+  "speedLabel": "Speed",
+  "calculateButton": "Calculate",
+  "resultLabel": "Estimated Download Time",
+  "darkModeSwitch": "Dark Mode"
+}

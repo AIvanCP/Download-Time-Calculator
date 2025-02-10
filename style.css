@@ -180,7 +180,7 @@ body.dark-mode .footer img {
   body {
     padding: 10px;
     display: block;
-    overflow-x: hidden;
+    overflow: auto;
   }
 
   .container {
@@ -230,6 +230,12 @@ body.dark-mode .footer img {
   .footer a {
     font-size: 0.9em;
   }
+
+  .controls-container {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
 }
 
 /* From Uiverse.io by nihad-abbasov */
@@ -244,6 +250,10 @@ body.dark-mode .footer img {
   --circle-diameter: 32px;
   --circle-bg: rgb(232, 89, 15);
   --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 32px;
 }
 
 .ui-switch input {
@@ -323,8 +333,51 @@ body.dark-mode .footer img {
   height: 0;
 }
 
-.top-right {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.controls-container {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.language-switch-dropdown {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  height: 32px; /* Match the height of the switch */
+  display: flex;
+  align-items: center;
+}
+
+/* Update dark mode styles for the dropdown */
+body.dark-mode .language-switch-dropdown {
+  background-color: #333;
+  color: #e0e0e0;
+  border: 1px solid #555;
+}
+
+/* Remove the previous absolute positioning styles */
+.lang-selection {
+  position: relative;
+  display: flex;
+  align-items: center;
 }

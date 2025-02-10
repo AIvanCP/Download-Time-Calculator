@@ -90,17 +90,32 @@ function calculateDownloadTime() {
   }
 }
 
+function loadLanguage(lang) {
+  fetch(`./lang/${lang}.json`)
+    .then((response) => response.json())
+    .then((data) => {
+      document.getElementById("titleText").innerText = data.title;
+      document.getElementById("fileSizeLabel").innerText = data.fileSizeLabel;
+      document.getElementById("speedLabel").innerText = data.speedLabel;
+      document.getElementById("calculateButton").innerText =
+        data.calculateButton;
+      document.getElementById("resultLabel").innerText = data.resultLabel;
+      document.getElementById("darkModeSwitchLabel").innerText =
+        data.darkModeSwitch;
+    });
+}
+
 function switchLanguage() {
-  const elements = document.querySelectorAll("[data-en], [data-id]");
-  elements.forEach((el) => {
-    const enText = el.getAttribute("data-en");
-    const idText = el.getAttribute("data-id");
-    if (el.innerText === enText) {
-      el.innerText = idText;
-    } else {
-      el.innerText = enText;
-    }
-  });
+  const currentLang = localStorage.getItem("language") || "en";
+  const newLang = currentLang === "en" ? "id" : "en";
+  localStorage.setItem("language", newLang);
+  loadLanguage(newLang);
+}
+
+function switchLanguageDropdown() {
+  const selectedLang = document.getElementById("languageSwitchDropdown").value;
+  localStorage.setItem("language", selectedLang);
+  loadLanguage(selectedLang);
 }
 
 function applyDarkMode(isDarkMode) {
@@ -119,8 +134,12 @@ function toggleDarkMode() {
   localStorage.setItem("darkMode", isDarkMode);
 }
 
-// Apply dark mode on page load based on user preference
+// Apply dark mode and language on page load based on user preference
 document.addEventListener("DOMContentLoaded", () => {
   const isDarkMode = JSON.parse(localStorage.getItem("darkMode"));
   applyDarkMode(isDarkMode);
+
+  const lang = localStorage.getItem("language") || "en";
+  document.getElementById("languageSwitchDropdown").value = lang;
+  loadLanguage(lang);
 });

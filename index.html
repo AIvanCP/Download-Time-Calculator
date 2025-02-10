@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Time Calculator</title>
+    <title id="title">Download Time Calculator</title>
     <meta name="description" content="Calculate the download time for a file based on your internet speed.">
     <meta name="keywords" content="download, time, calculator, internet speed, file size">
     <meta name="author" content="KidiXDev">
@@ -16,18 +16,22 @@
 </head>
 
 <body>
-    <div class="top-right">
-        <label class="ui-switch">
-            <input type="checkbox" id="darkModeSwitch" onchange="toggleDarkMode()">
-            <div class="slider">
-                <div class="circle"></div>
-            </div>
-        </label>
-    </div>
-    <div>
+    <div class="main-wrapper">
+        <div class="controls-container">
+            <select id="languageSwitchDropdown" class="language-switch-dropdown" onchange="switchLanguageDropdown()">
+                <option value="en">English</option>
+                <option value="id">Bahasa Indonesia</option>
+            </select>
+            <label class="ui-switch">
+                <input type="checkbox" id="darkModeSwitch" onchange="toggleDarkMode()">
+                <div class="slider">
+                    <div class="circle"></div>
+                </div>
+            </label>
+        </div>
         <div class="container">
-            <h2>Download Time Calculator</h2>
-            <label for="fileSize">File Size:</label>
+            <h2 id="titleText">Download Time Calculator</h2>
+            <label id="fileSizeLabel" for="fileSize">File Size:</label>
             <div class="file-size-container">
                 <div class="file-size-input">
                     <input type="number" id="fileSize" placeholder="Example: 3">
@@ -43,7 +47,7 @@
                     </select>
                 </div>
             </div>
-            <label for="speed">Internet Speed:</label>
+            <label id="speedLabel" for="speed">Internet Speed:</label>
             <div class="speed-container">
                 <div class="speed-input">
                     <input type="number" id="speed" placeholder="Example: 150">
@@ -57,8 +61,8 @@
                     </select>
                 </div>
             </div>
-            <button onclick="calculateDownloadTime()">Calculate</button>
-            <h3>Result:</h3>
+            <button id="calculateButton" onclick="calculateDownloadTime()">Calculate</button>
+            <h3 id="resultLabel">Result:</h3>
             <input type="text" id="result" readonly placeholder="Result will appear here ...">
         </div>
         <div class="footer">
