@@ -26,8 +26,14 @@ function calculateDownloadTime() {
     case "KB":
       fileSizeMB = fileSize / 1024;
       break;
+    case "Kb":
+      fileSizeMB = fileSize / (1024 * 8);
+      break;
     case "TB":
       fileSizeMB = fileSize * 1024 * 1024;
+      break;
+    case "Tb":
+      fileSizeMB = (fileSize * 1024 * 1024) / 8;
       break;
   }
 
@@ -42,8 +48,14 @@ function calculateDownloadTime() {
     case "Gbps":
       speedMBps = speed * 128;
       break;
+    case "GBps":
+      speedMBps = speed * 1024;
+      break;
     case "Kbps":
       speedMBps = speed / 8000;
+      break;
+    case "KBps":
+      speedMBps = speed / 1024;
       break;
   }
 
