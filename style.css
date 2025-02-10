@@ -363,19 +363,16 @@ body.dark-mode .footer img {
   background-color: #fff;
   color: #333;
   cursor: pointer;
-  height: 32px; /* Match the height of the switch */
   display: flex;
   align-items: center;
 }
 
-/* Update dark mode styles for the dropdown */
 body.dark-mode .language-switch-dropdown {
   background-color: #333;
   color: #e0e0e0;
   border: 1px solid #555;
 }
 
-/* Remove the previous absolute positioning styles */
 .lang-selection {
   position: relative;
   display: flex;
