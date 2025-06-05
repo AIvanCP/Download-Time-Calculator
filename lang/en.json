@@ -1,8 +1,28 @@
 {
   "title": "Download Time Calculator",
-  "fileSizeLabel": "File Size",
-  "speedLabel": "Speed",
+  "fileSizeLabel": "File Size:",
+  "speedLabel": "Internet Speed:",
   "calculateButton": "Calculate",
-  "resultLabel": "Estimated Download Time",
-  "darkModeSwitch": "Dark Mode"
+  "resultLabel": "Result:",
+  "darkModeSwitch": "Dark Mode",
+  "fileSizePlaceholder": "Example: 3",
+  "speedPlaceholder": "Example: 150",
+  "resultPlaceholder": "Result will appear here...",
+  "githubText": "Github",
+  "units": {
+    "GB": "Gigabyte (GB)",
+    "Gb": "Gigabit (Gb)",
+    "MB": "Megabyte (MB)",
+    "Mb": "Megabit (Mb)",
+    "KB": "Kilobyte (KB)",
+    "Kb": "Kilobit (Kb)",
+    "TB": "Terabyte (TB)",
+    "Tb": "Terabit (Tb)",
+    "Mbps": "Mb/s",
+    "MBps": "MB/s",
+    "Gbps": "Gb/s",
+    "GBps": "GB/s",
+    "Kbps": "Kb/s",
+    "KBps": "KB/s"
+  }
 }

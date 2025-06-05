@@ -106,14 +106,41 @@ function loadLanguage(lang) {
   fetch(`./lang/${lang}.json`)
     .then((response) => response.json())
     .then((data) => {
+      // Update text elements
       document.getElementById("titleText").innerText = data.title;
       document.getElementById("fileSizeLabel").innerText = data.fileSizeLabel;
       document.getElementById("speedLabel").innerText = data.speedLabel;
-      document.getElementById("calculateButton").innerText =
-        data.calculateButton;
+      document.getElementById("calculateButton").innerText = data.calculateButton;
       document.getElementById("resultLabel").innerText = data.resultLabel;
-      document.getElementById("darkModeSwitchLabel").innerText =
-        data.darkModeSwitch;
+      document.getElementById("githubText").innerText = data.githubText;
+      
+      // Update placeholders
+      document.getElementById("fileSize").placeholder = data.fileSizePlaceholder;
+      document.getElementById("speed").placeholder = data.speedPlaceholder;
+      document.getElementById("result").placeholder = data.resultPlaceholder;
+      
+      // Update file size unit options
+      const fileSizeUnit = document.getElementById("fileSizeUnit");
+      const fileSizeOptions = fileSizeUnit.querySelectorAll("option");
+      fileSizeOptions.forEach(option => {
+        const value = option.value;
+        if (data.units[value]) {
+          option.textContent = data.units[value];
+        }
+      });
+      
+      // Update speed unit options
+      const speedUnit = document.getElementById("speedUnit");
+      const speedOptions = speedUnit.querySelectorAll("option");
+      speedOptions.forEach(option => {
+        const value = option.value;
+        if (data.units[value]) {
+          option.textContent = data.units[value];
+        }
+      });
+    })
+    .catch(error => {
+      console.error('Error loading language:', error);
     });
 }
 

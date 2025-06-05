@@ -1,8 +1,28 @@
 {
-  "title": "Download Time Calculator",
-  "fileSizeLabel": "Ukuran File",
-  "speedLabel": "Kecepatan",
+  "title": "Kalkulator Waktu Download",
+  "fileSizeLabel": "Ukuran File:",
+  "speedLabel": "Kecepatan Internet:",
   "calculateButton": "Hitung",
-  "resultLabel": "Perkiraan Waktu",
-  "darkModeSwitch": "Mode Gelap"
+  "resultLabel": "Hasil:",
+  "darkModeSwitch": "Mode Gelap",
+  "fileSizePlaceholder": "Contoh: 3",
+  "speedPlaceholder": "Contoh: 150",
+  "resultPlaceholder": "Hasil akan muncul di sini...",
+  "githubText": "Github",
+  "units": {
+    "GB": "Gigabyte (GB)",
+    "Gb": "Gigabit (Gb)",
+    "MB": "Megabyte (MB)",
+    "Mb": "Megabit (Mb)",
+    "KB": "Kilobyte (KB)",
+    "Kb": "Kilobit (Kb)",
+    "TB": "Terabyte (TB)",
+    "Tb": "Terabit (Tb)",
+    "Mbps": "Mb/s",
+    "MBps": "MB/s",
+    "Gbps": "Gb/s",
+    "GBps": "GB/s",
+    "Kbps": "Kb/s",
+    "KBps": "KB/s"
+  }
 }
